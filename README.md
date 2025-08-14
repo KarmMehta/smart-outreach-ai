@@ -100,13 +100,19 @@ streamlit run app.py
 3. Preview results in the Outreach Pack
 4. Export to `outreach_results.csv`
 
-**Sample Output:**
+📊 Example Output
+-----------------
 
-```csv
-name,company,email,role,outreach_message
-Ananya Sharma,TechNova,ananya.sharma@technova.com,Marketing Manager,Hi Ananya, excited to connect with TechNova’s marketing vision...
-Ravi Kumar,InnoSoft,ravi.kumar@innosoft.com,CEO,Hi Ravi, I admire your leadership at InnoSoft, here’s something that could help...
-```
+The system generates **AI-crafted outreach messages** and saves them in the following location:
+
+
+### Example CSV Output
+
+| Lead Name | Company     | Message                                                 | Status   |
+|-----------|-------------|---------------------------------------------------------|----------|
+| John Doe  | GrowthTech  | "Hi John, I noticed your team is scaling fast..."       | Pending  |
+| Jane Roe  | Finovate    | "Hello Jane, your recent funding round caught my eye..."| Sent     |
+| Alex Lee  | CloudCore   | "Hi Alex, we help teams like yours automate outreach..."| Replied  |
 
 ---
 
@@ -140,5 +146,3 @@ Contributions are welcome!
 ## ⭐ Support
 
 If you like this project, consider giving it a ⭐ on [GitHub](https://github.com/KarmMehta/smart-outreach-ai)!
-
-```
