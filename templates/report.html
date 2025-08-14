@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{{ title }}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+:root{
+  --bg1:#0B1220; --bg2:#101827; --card:#121B2A;
+  --text:#E8EEF6; --muted:#97A6BA; --accent:#3E8EFB;
+}
+body{ margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  color:var(--text); background:linear-gradient(135deg,var(--bg1),var(--bg2));}
+.wrap{ max-width:1100px; margin:40px auto; padding:0 16px;}
+.header{ background:var(--card); border:1px solid rgba(255,255,255,.08);
+  padding:18px 20px; border-radius:14px; }
+.pill{ background:rgba(62,142,251,.15); color:var(--accent); padding:4px 10px; border-radius:999px; }
+.grid{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin-top:16px;}
+.card{ background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius:12px; padding:16px 18px;}
+.meta{ color:var(--muted); font-size:14px;}
+.msg{ white-space:pre-wrap; line-height:1.45; margin-top:8px;}
+footer{ margin:30px 0; color:var(--muted); font-size:13px; text-align:center;}
+@media (max-width:760px){ .grid{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <span class="pill">{{ mode }}</span>
+      <h1 style="margin:8px 0 0 0;">AI-Powered Outreach Pack</h1>
+      <div class="meta">Word Limit: {{ word_limit }} &nbsp;&nbsp;·&nbsp;&nbsp; Messages: {{ count }}</div>
+    </div>
+
+    <div class="grid">
+      {% for r in rows %}
+      <div class="card">
+        <h3 style="margin:0 0 6px 0">{{ r.name }} <span class="meta">— {{ r.role }} @ {{ r.company }}</span></h3>
+        {% if r.email %}<div class="meta">{{ r.email }}</div>{% endif %}
+        <div class="msg">{{ r.outreach_message }}</div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <footer>Prepared by Karm Mehta — Python + AI Workflow Automation</footer>
+  </div>
+</body>
+</html>
